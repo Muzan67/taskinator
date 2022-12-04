@@ -12,7 +12,7 @@ var taskFormHandler = function (event) {
   var taskTypeInput = document.querySelector("select[name='task-type']").value;
 
   // check if input values are empty strings
-  if (!taskNameInput || !taskTypeInput) {
+  if (taskNameInput === "" || taskTypeInput === "") {
     alert("You need to fill out the task form!");
     return false;
   }
@@ -29,9 +29,8 @@ var taskFormHandler = function (event) {
   if (isEdit) {
     var taskId = formEl.getAttribute("data-task-id");
     completeEditTask(taskNameInput, taskTypeInput, taskId);
-  }
-  // no data attribute, so create object as normal and pass to createTaskEl function
-  else {
+    // no data attribute, so create object as normal and pass to createTaskEl function
+  } else {
     // package up data as an object
     var taskDataObj = {
       name: taskNameInput,
@@ -91,9 +90,9 @@ var createTaskActions = function (taskId) {
   actionContainerEl.appendChild(deleteButtonEl);
   // create dropdown menu
   var statusSelectEl = document.createElement("select");
-  statusSelectEl.className = "select-status";
   statusSelectEl.setAttribute("name", "status-change");
   statusSelectEl.setAttribute("data-task-id", taskId);
+  statusSelectEl.className = "select-status";
   actionContainerEl.appendChild(statusSelectEl);
   // create status options
   var statusChoices = ["To Do", "In Progress", "Completed"];
@@ -139,9 +138,8 @@ var taskButtonHandler = function (event) {
     // get the element's task id
     var taskId = targetEl.getAttribute("data-task-id");
     editTask(taskId);
-  }
-  // if delete button was clicked
-  else if (targetEl.matches(".delete-btn")) {
+    // if delete button was clicked
+  } else if (targetEl.matches(".delete-btn")) {
     console.log("delete", targetEl);
     var taskId = targetEl.getAttribute("data-task-id");
     deleteTask(taskId);
@@ -160,7 +158,7 @@ var taskStatusChangeHandler = function (event) {
   );
 
   // get the currently selected option's value and convert to lowercase
-  var statusValue = event.target.toLowerCase();
+  var statusValue = event.target.value.toLowerCase();
 
   if (statusValue === "to do") {
     tasksToDoEl.appendChild(taskSelected);
