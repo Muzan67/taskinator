@@ -2,6 +2,7 @@
 
 ## Taskinator - Deployed Application
 
+https://muzan67.github.io/taskinator/
 
 ## Taskinator - Github Repository
 
@@ -10,7 +11,7 @@ https://github.com/Muzan67/taskinator
 ## User Story
 
 We have build a "Tasks To Do" list which allows your to create tasks and add it to that list.
-You will then be able change the status of the task to the appropriate column (Tasks To Do, Tasks In Progress, or Tasks Completed). 
+You will then be able change the status of the task to the appropriate column (Tasks To Do, Tasks In Progress, or Tasks Completed).
 Each task will have an Edit and Delete button.
 
 ## Table of Contents
@@ -54,9 +55,9 @@ To install this application, clone the code into your terminal for the respectiv
 ## Questions / Inquiry
 
 - You can view more of my projects at https://github.com/Muzan67
-- My Github username is Muzan67, the repository for Taskinator can be found at 
+- My Github username is Muzan67, the repository for Taskinator can be found at: https://muzan67.github.io/taskinator/
 - The Github page for this project can be accessed using the following link: https://muzan67.github.io/robot-gladiators/
-- If you have any questions about this projects, please contact me directly at ac.tendo67@gmail.com
+- If you have any questions about this projects, please contact me directly at: ac.tendo67@gmail.com
 - How to reach me: https://www.linkedin.com/in/alejandro-cortez1967/
 
 ## Contribution
@@ -64,5 +65,5 @@ To install this application, clone the code into your terminal for the respectiv
 Made by Muzan67 Alejandro Cortez
 
 ## Screenshot
-![taskinator](https://user-images.githubusercontent.com/102841726/205804754-7a8e437b-658c-4504-bb6a-d9add795b5db.png)
 
+![taskinator](https://user-images.githubusercontent.com/102841726/205804754-7a8e437b-658c-4504-bb6a-d9add795b5db.png)
