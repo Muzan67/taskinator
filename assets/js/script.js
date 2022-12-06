@@ -58,9 +58,9 @@ var createTaskEl = function (taskDataObj) {
   // add HTML content to div
   taskInfoEl.innerHTML =
     "<h3 class='task-name'>" +
-    taskDataObj.name +
+    tasks[i].name +
     "</h3><span class='task-type'>" +
-    taskDataObj.type +
+    tasks[i].type +
     "</span>";
   listItemEl.appendChild(taskInfoEl);
 
@@ -236,8 +236,8 @@ var deleteTask = function (taskId) {
   // creat a new array to hold updated list of tasks
   var updatedTaskArr = [];
 
-  // loop hrough current tasks
-  for (var i = 0; i, tasks.length; i++) {
+  // loop through current tasks
+  for (var i = 0; i < tasks.length; i++) {
     // if tasks[i].id doesn't match the value of taskId, let's keep that task and push it into the new array
     if (tasks[i].id !== parseInt(taskId)) {
       updatedTaskArr.push(tasks[i]);
@@ -252,6 +252,25 @@ var deleteTask = function (taskId) {
 
 var saveTasks = function () {
   localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+
+var loadTasks = function () {
+  var savedTasks = localStorage.getItem("tasks");
+  // if there are no tasks, set tasks to an empty array and return out of the function
+  if (!savedTasks) {
+    return false;
+  }
+  console.log("Saved tasks found!");
+  // else, load up saved tasks
+
+  // patse into array of objects
+  savedTasks = JSON.parse(savedTasks);
+
+  // loop through savedTasks array
+  for (var i = 0; i < savedTasks.length; i++) {
+    // if tasks[i].id doesn't match the value of taskId, let's keep that task and push it into the new array
+    createTaskEl(savedTasks[i]);
+  }
 };
 
 // Create a new task
